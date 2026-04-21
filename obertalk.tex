@@ -163,7 +163,7 @@
 \makebeamertitle
 
 \begin{frame}{Introduction}
-In this talk I want to introduce my work in my pair of papers \href{https://arxiv.org/abs/2601.17794}{arXiv:2601.17794} and \href{https://arxiv.org/abs/2410.13701}{arXiv:2410.13701}, plus some upcoming work.
+In this talk I want to introduce my work in my pair of papers \href{https://arxiv.org/abs/2601.17794}{arXiv:2601.17794} and \href{https://arxiv.org/abs/2410.13701}{arXiv:2410.13701}.
 
 Mostly this gives me an excuse to introduce the whole theory of hypoelliptic operators, and so that is what I will do.
 \end{frame}
@@ -202,6 +202,9 @@ Mostly this gives me an excuse to introduce the whole theory of hypoelliptic ope
         \sum_{|\alpha|\leq m}a_{\alpha}(x)\partial^{\alpha}u(x) = f(x).
     \]
     Where $f \in C^{\infty}.$
+\end{frame}
+
+\begin{frame}{Reminder on \emph{ellipticity} (cont.)}
     Pretend that the coefficients are constant, and invert $D$ using the Fourier transform: we get
     \[
         u_1(x) = (2\pi)^{-d}\int_{\Rl^d}\int_{\Rl^d} i^{-m}(\sum_{|\alpha|=m} a_{\alpha}(x)\xi^{\alpha})^{-1}\exp(i(x-y,\xi))f(y)\,dyd\xi.
@@ -218,15 +221,15 @@ Are there hypoelliptic operators that are not elliptic? Sure... On $\Rl^2 = \Rl_
 \[
     K = -\partial^2_y+y\partial_x.
 \]
-Kolmogorov proved that $K$ is hypoelliptic by the classic method of writing down a formula for $K^{-1}.$
+Kolmogorov proved that $K$ is hypoelliptic by the classic method of writing down a formula for $K^{-1}.$\\
 \emph{Puzzle 1:} What's going on here? Why is $K$ really hypoelliptic?
 \end{frame}
 
 \begin{frame}{Puzzle 2: Kohn's operator}
-Normally when we talk about elliptic operators $D = \sum_{|\alpha|\leq m}a_{\alpha}(x)\partial^{\alpha},$ the lower order part $\sum_{|\alpha|<m} a_{\alpha}(x)\partial^{\alpha}$ has no impact on the ellipticity. Hypoellipticity is very different...\pause
+Normally when we talk about elliptic operators $D = \sum_{|\alpha|\leq m}a_{\alpha}(x)\partial^{\alpha},$ the lower order part $\sum_{|\alpha|<m} a_{\alpha}(x)\partial^{\alpha}$ has no impact on the ellipticity. Hypoellipticity is very different...\\\pause
 Let $b\in \Cplx,$ and let $\Lc_b$ be the operator on $\Rl^3=\Rl_x\times \Rl_y\times \Rl_z$ given by
 \[
-    \Lc_b = (\partial_x-\frac12y\partial_z)^2+(\partial_y+\frac12x\partial_z)+ib\partial_z.
+    \Lc_b = (\partial_x-\frac12y\partial_z)^2+(\partial_y+\frac12x\partial_z)^2+ib\partial_z.
 \]
 Then:
 \begin{itemize}
@@ -239,13 +242,13 @@ Then:
 
 \begin{frame}{Puzzle 3: Lewy's operator}
 The Cauchy-Kovalevskaya theorem says that any PDE with analytic coefficients which is not obviously ill-posed is in fact locally solvable.
-For a long time, people expected something similar would be true for PDE with smooth coefficients. But it's not so: Let
+For a long time, people expected something similar would be true for PDE with smooth coefficients. But it's not so.\pause \\ Let
 \[
     L = \partial_x-i\partial_y+(ix+y)\partial_z,\text{ on }\Rl^3 = \Rl_x\times \Rl_y\times \Rl_z.
 \]
 Lewy proved that for ``most" $C^{\infty}$ functions $f,$ the equation $Lu=f$ is not locally solvable (meaning that for all $x,$ there is no neighbourhood
-$U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
-\emph{Puzzle 3}: What is so special about $L$?
+$U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).\\
+\emph{Puzzle 3}: What is so special about $L$? For which functions $f$ is $Lu=f$ solvable?
 \end{frame}
 
 \begin{frame}{Puzzle 4: Grushin's operator}
@@ -294,6 +297,7 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
         \]
         is hypoelliptic.
     \end{theorem}
+    The converse is ``almost true", via the Frobenius theorem.
 \end{frame}
 
 \begin{frame}{Example: Kolmogorov's operator}
@@ -349,21 +353,11 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
     \[
         G = \exp(\gf)
     \]
-    as the unique simply connected Lie group with Lie algebra $\gf.$\pause
+    as the unique simply connected Lie group with Lie algebra $\gf.$ \\\pause
     Actually, here $\exp$ is a homeomorphism, and $G$ can be identified with $\gf$ with the group product
     \[
         X\cdot Y = \mathrm{BCH}(X,Y).
     \]
-\end{frame}
-
-\begin{frame}{Analysis on graded Lie groups}
-    A graded Lie group $G$ is a glorified Euclidean space. As a manifold, we have $G=\Rl^n$ and the Haar measure on $G$ is nothing but the pushforward of the Lebesgue measure by the exponential map.\pause
-
-    Pseudodifferential operators on $G$ are given by operators of the form
-    \[
-        Tu(g) = \int_{G} K(g,h)u(gh)\,dh
-    \]
-    for some singular kernel $K(g,h).$
 \end{frame}
 
 \begin{frame}{Graded Lie groups (concretely)}
@@ -377,6 +371,16 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
   \[
     \mathfrak{g} = \mathrm{span}\{\partial_x+\frac12y^2\partial_z,\partial_y,y\partial_z,\partial_z\}.
   \]
+\end{frame}
+
+\begin{frame}{Analysis on graded Lie groups}
+    A graded Lie group $G$ is a glorified Euclidean space. As a manifold, we have $G=\Rl^n$ and the Haar measure on $G$ is nothing but the pushforward of the Lebesgue measure by the exponential map.\pause
+
+    Pseudodifferential operators on $G$ are given by operators of the form
+    \[
+        Tu(g) = \int_{G} K(g,h)u(gh)\,dh
+    \]
+    for some singular kernel $K(g,h).$
 \end{frame}
 
 \begin{frame}{Left-invariant differential operators}
@@ -546,7 +550,7 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
     \[
         0=H^1 < H^1 < H^2 = T\mathrm{SO}(3)
     \]
-    is a Carnot structure for $\mathrm{SO}(3).$
+    is a Carnot structure for $\mathrm{SO}(3),$ and $X^2+Y^2$ is a hypoelliptic operator.
 \end{frame}
 
 
@@ -602,6 +606,71 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
 %     \]
 %     come from so-called singular filtrations.
 % \end{frame}
+%
+% \section{Weyl's law}\label{Weyl_section}
+%
+% \begin{frame}
+%     \Huge{Part \ref{Weyl_section}: Weyl's law and hypoelliptic operators}
+% \end{frame}
+%
+% \begin{frame}{Weyl's law for elliptic operators}
+%     Let $P\geq 0$ be an elliptic pseudodifferential operator of order $m$ on a compact manifold $M,$ with principal symbol $\sigma_m.$ Weyl's law for elliptic operators says that asymptotically as $\lambda\to\infty,$ we have
+%     \[
+%         N(\lambda,P) \sim (2\pi)^{-d}|\{(x,\xi)\in T^*M\;:\;\sigma_m(x,\xi)\leq \lambda\}|
+%     \]
+%     where $|\cdot|$ is the phase-space volume (i.e. the Liouville measure).
+%     Equivalently
+%     \[
+%         N(\lambda,P) \sim (2\pi)^{-d}\lambda^{\frac{d}{m}}|\{(x,\xi)\;:\;\sigma_m(P)(x,\xi)\leq 1\}|.
+%     \]
+% \end{frame}
+%
+% \begin{frame}{The Grushin puzzle}
+%     Consider the following differential operator $G$ on the $2$-torus $\Circ^2 = \Rl^2/\Itgr^2,$
+%     \[
+%         G = -\partial_x^2-\sin^2(2\pi x)\partial_y^2,\quad \sigma_2(P)(x,\xi) = \xi_x^2+\sin^2(2\pi x)\xi_y^2.
+%     \]
+%     This is a so-called Grushin-type operator on the torus. It is not elliptic.\pause
+%
+%     Let $\Sigma(\lambda)$ be the region of phase space where the principal symbol of $G$ is $<\lambda,$ i.e.
+%     \[
+%         \Sigma(\lambda) := \{((x,y),(\xi_x,\xi_y))\in \Circ^2\times \Rl^2\;:\;\xi_x^2+\sin^2(2\pi x)\xi_y^2 \leq \lambda\}.
+%     \]
+%     This has infinite volume.
+%     \[
+%         |\Sigma(\lambda)| = \lambda\int_0^1 \frac{1}{|\sin(2\pi x)|}\,dx = +\infty.
+%     \]
+%     \pause
+%     Nevertheless, $G$ has discrete spectrum, and there exists a constant $c$ such that
+%     \[
+%         N(\lambda,G) \sim c\lambda \log(\lambda),\quad \lambda\to\infty.
+%     \]
+%     (compare that an elliptic operator of order $2$ in dimension $2$ would have $N(\lambda)\sim c\lambda$).
+%     What is going on here?
+% \end{frame}
+%
+% \begin{frame}{Fefferman's interpretation}
+%     In a famous paper titled ``the uncertainty principle", Fefferman gave a heuristic argument explaining why operators like $G$ have discrete spectrum and explaining the form of their spectral counting function.
+%
+%     The semiclassical heuristic suggests that
+%     \[
+%         N(\lambda,G)\sim \#\{\text{ states that can fit inside the region }\Sigma(\lambda)\}.
+%     \]
+%     By the uncertainty principle, a state should be localised in a region of volume at most $(2\pi)^d.$
+% \end{frame}
+%
+% \begin{frame}{Fefferman's distorted boxes}
+%     A \emph{distorted box} is a region in phase space of the form
+%     \begin{align*}
+%         \{(x,\xi)\;:\; |x-x_0|< \delta,\; |\xi-\xi_0|< \frac{1}{\delta}\}.
+%     \end{align*}
+%     Previously we estimated $N(\lambda,G)$ by the volume of $\Sigma(\lambda)$. Fefferman suggests to instead take:
+%     \[
+%         N(\lambda,G) \sim (2\pi)^{-d}\#\{\text{disjoint distorted boxes that can fit inside }\Sigma(\lambda)\}.
+%     \]
+%     It turns out that this right-hand-side is finite, and gives the correct asymptotic as $\lambda\to\infty.$
+% \end{frame}
+%
 
 
 \section{Some recent results}\label{conclusion_section}
@@ -610,20 +679,57 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
     \Huge{Part \ref{conclusion_section}: Conclusion and some results}
 \end{frame}
 
-\begin{frame}{Connes' trace theorem}
-    This is the obligatory part of the talk where I advertise my own results.
+\begin{frame}{Background on ideals}
+    Let $H$ be a Hilbert space, and let $\Kc(H)$ denote the compact operators on $H.$
+% The $n$th singular value $\mu(n,T)$ of $T \in \Kc(H)$ is defined as
+%     \[
+%         \mu(n,T) := \inf\{\|T-R\|_{\infty}\;:\;\mathrm{rank}(T)\leq n\}
+%     \]
+%     where $\|\cdot\|_{\infty}$ is the operator norm. Equivalently $\mu(n,T)=\lambda(n,|T|).$
+    The trace ideal $\Lc_1$ is defined as
+    \[
+        \Lc_1(H) := \{T\in \Kc(H)\;:\;\|T\|_1 := \sum_{n=0}^\infty \lambda(n,|T|)\}
+    \]
+    and the weak-trace class ideal is defined as
+    \[
+        \Lc_{1,\infty}(H) := \{T \in \Kc(H)\;:\;\|T\|_{1,\infty} := \sup_{n\geq 0} (n+1)\lambda(n,|T|)\}.
+    \]
+\end{frame}
 
-    Recall:
-    \begin{theorem}[Connes' trace theorem]
-        Let $M$ be a compact $d$-manifold, and let $T \in \Psi^{-d}(M)$ (a classical pseudodifferential operator of order $-d.$) Then $T$ can be realised as an operator belonging to the weak-trace-class ideal $\Lc_{1,\infty},$ and for any normalised trace $\varphi$ on $\Lc_{1,\infty}$ we have
+\begin{frame}{Background on traces}
+    The trace ideal is so named because it's the natural domain of the operator trace
+    \[
+        \Tr:\Lc_1(H)\to \Cplx.
+    \]
+    In general, a trace on an operator ideal $\Ic$ is a unitarily invariant functional
+    \[
+        \varphi:\Ic\to \Cplx,\quad \varphi(UAU^*)=\varphi(A),\; \quad U \text{ unitary.}
+    \]
+    Equivalently $\varphi(AB)=\varphi(BA)$ for all $A \in \Ic$ and bounded $B.$
+\end{frame}
+
+\begin{frame}{The trace theorem}
+    \begin{theorem}[Connes' trace theorem]\label{ctt_original}
+        Let $M$ be a compact $d$-dimensional manifold and let $T\in \Psi^{-d}(M)$ be a classical pseudodifferential operator of order $-d.$ Let $\nu$ be a density on $M.$
+        Then $T$ can be identified with an element of $\Lc_{1,\infty}(L_2(M,\nu))$ and for any normalised trace $\varphi$ on $\Lc_{1,\infty}(L_2(M,\nu))$ we have
         \[
-            \varphi(T) = \frac1d\mathrm{Res}(T)
+            \varphi(T) = \frac{1}{d}\mathrm{Res}(T).
         \]
-        where $\mathrm{Res}(T)$ is the Wodzicki residue.
+    \end{theorem}
+\end{frame}
+
+\begin{frame}{The trace theorem (without traces)}
+    \begin{theorem}[Connes' trace theorem]\label{ctt_original}
+        Let $M$ be a compact $d$-dimensional manifold and let $T\in \Psi^{-d}(M)$ be a classical pseudodifferential operator of order $-d.$ Let $\nu$ be a density on $M.$
+        Then $T$ can be identified with an element of $\Lc_{1,\infty}(L_2(M,\nu))$ and for any normalised trace $\varphi$ on $\Lc_{1,\infty}(L_2(M,\nu))$ we have
+        \[
+            \sum_{n=0}^N \lambda(n,T) = \frac{1}{d}\mathrm{Res}(T)\log(N+2)+O(1),\quad N\to\infty..
+        \]
     \end{theorem}
 \end{frame}
 
 \begin{frame}{Connes' trace theorem for Carnot manifolds}
+    This is the obligatory part of the talk where I advertise my own results.
     \begin{theorem}
         Let $(M,H)$ be a compact Carnot manifold with homogeneous dimension $Q,$ and let $T \in \Psi^{-Q}_H(M)$ (in the van Erp--Yuncken sense). Then $T$ can be realised as an operator belonging to the weak-trace-class ideal $\Lc_{1,\infty},$ and for any normalised trace $\varphi$ on $\Lc_{1,\infty}$ we have
         \[
