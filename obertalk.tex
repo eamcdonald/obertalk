@@ -171,7 +171,7 @@ Mostly this gives me an excuse to introduce the whole theory of hypoelliptic ope
 \section{Hypoellipticity (and some puzzles)}\label{Intro}
 
 \begin{frame}
-    \huge{Section \ref{Intro}: Hypoellipticity (and some puzzles)}
+    \huge{Part \ref{Intro}: Hypoellipticity (and some puzzles)}
 \end{frame}
 
 \begin{frame}{What is \emph{hypo}ellipticity?}
@@ -271,7 +271,7 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
 \section{H\"ormander's sum of squares theorem}\label{Hormander_section}
 
 \begin{frame}
-    \Huge{Section \ref{Hormander_section}: H\"ormander's sum of squares theorem}
+    \Huge{Part \ref{Hormander_section}: H\"ormander's sum of squares theorem}
 \end{frame}
 
 \begin{frame}{The H\"ormander condition}
@@ -315,7 +315,7 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
 \section{Analysis on graded Lie groups}\label{nilpotent_lie_groups_section}
 
 \begin{frame}
-    \Huge{Section \ref{nilpotent_lie_groups_section}: Analysis on graded Lie groups}
+    \Huge{Part \ref{nilpotent_lie_groups_section}: Analysis on graded Lie groups}
 \end{frame}
 
 \begin{frame}{Why graded Lie groups?}
@@ -449,7 +449,7 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
 \section{Analysis on Carnot manifolds and the tangent groupoid}\label{Carnot_section}
 
 \begin{frame}
-    \Huge{Section \ref{Carnot_section}: Analysis on Carnot manifolds and the tangent groupoid}
+    \Huge{Part \ref{Carnot_section}: Analysis on Carnot manifolds and the tangent groupoid}
 \end{frame}
 
 \begin{frame}{Carnot manifolds}
@@ -499,11 +499,54 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
     \[
         0 = H^0 < H^1 < H^2=TM.
     \]
-    The osculating groups are all the Heisenberg groups. The operator
+    The osculating groups are all the three-dimensional Heisenberg group. The operator
     \[
         \Xi = X^2+Y^2
     \]
     satisfies the \emph{pointwise Rockland property} and is therefore hypoelliptic.
+\end{frame}
+
+\begin{frame}{A random path following $X,Y$}
+\begin{center}
+    \includegraphics[width=90mm]{xy_coords_single_paths.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Plot of a collection of random paths following $X,Y,$ in $(x,y,\theta)$ space}
+\begin{center}
+    \includegraphics[width=100mm]{xyt_coords_multiple_paths.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Another example: A rolling ball}
+    Consider a ball rolling on a plane, without twisting or slipping:
+    \begin{center}
+    \includegraphics[width=100mm]{ballonplane.eps}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Rolling ball example (cont.)}
+    The space of orientations of the ball is $M=\mathrm{SO}(3).$ The Lie algebra of $\mathrm{SO}(3)$ is spanned by three vector fields:
+    \[
+        X = \text{rolling around }x\text{ axis},\; Y = \text{ rolling around }y\text{ axis}
+    \]
+    and
+    \[
+        Z = \text{rolling around }z\text{ axis}.
+    \]
+    They satisfy $[X,Y]=Z,\, [Y,Z]=X$ and $[Z,X]=Y.$
+
+    To say that the ball ``moves without twisting or slipping" is to say that the orientations of the ball move along the vector fields $X,Y.$
+\pause
+    Let
+    \[
+        H^1 = \mathrm{span}\{X,Y\}.
+    \]
+    Then
+    \[
+        0=H^1 < H^1 < H^2 = T\mathrm{SO}(3)
+    \]
+    is a Carnot structure for $\mathrm{SO}(3).$
 \end{frame}
 
 
@@ -538,7 +581,9 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
     \[
         \Tb_HM := T_HM\times \{0\}\sqcup M\times M\times \Rl^{\times}
     \]
-    (appropriately topologised).
+    (appropriately topologised).\\
+    \pause
+    The advantages of their approach is that it is manifestly coordinate invariant, and it makes some of the elementary $\psi$DO theory very easy.
 \end{frame}
 
 
@@ -561,8 +606,15 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
 
 \section{Some recent results}\label{conclusion_section}
 
+\begin{frame}
+    \Huge{Part \ref{conclusion_section}: Conclusion and some results}
+\end{frame}
+
 \begin{frame}{Connes' trace theorem}
-    \begin{theorem}
+    This is the obligatory part of the talk where I advertise my own results.
+
+    Recall:
+    \begin{theorem}[Connes' trace theorem]
         Let $M$ be a compact $d$-manifold, and let $T \in \Psi^{-d}(M)$ (a classical pseudodifferential operator of order $-d.$) Then $T$ can be realised as an operator belonging to the weak-trace-class ideal $\Lc_{1,\infty},$ and for any normalised trace $\varphi$ on $\Lc_{1,\infty}$ we have
         \[
             \varphi(T) = \frac1d\mathrm{Res}(T)
@@ -580,9 +632,6 @@ $U\ni x$ and $u\in C^{\infty}(U)$ such that $Lu=f$ on $U$).
         where $\mathrm{Res}(T)$ is the residue as defined by Couchet--Yuncken.
     \end{theorem}
 \end{frame}
-
-
-
 
 \begin{frame}
 \structure{\begin{center}
